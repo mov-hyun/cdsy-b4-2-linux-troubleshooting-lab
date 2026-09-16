@@ -1,0 +1,40 @@
+>>> Starting Agent Boot Sequence...
+[1/6] Checking User Account               [OK]
+   ... Running as service user 'labuser' (uid=1000)
+[2/6] Verifying Environment Variables     [OK]
+   ... All required Envs correct
+[3/6] Checking Required Files             [OK]
+   ... Verified 'secret.key' with correct key string.
+[4/6] Checking Port Availability          [OK]
+   ... Port 15034 is available.
+[5/6] Verifying Log Permission            [OK]
+   ... Log directory is writable: /workspace/linux-troubleshooting-lab/.runtime/agent/logs
+[6/6] Verifying Mission Environment       [OK]
+   ... MEMORY_LIMIT=512MB, CPU_MAX_OCCUPY=100%, MULTI_THREAD_ENABLE=False
+------------------------------------------------------------
+All Boot Checks Passed!
+Agent READY
+2026-09-16 21:00:14,556 [INFO] [SafetyGuard] Process priority lowered (nice=10).
+2026-09-16 21:00:14,561 [INFO] Agent listening at port 15034
+
+==================================================
+ [ Agent Initiate ] Resource Check 
+==================================================
+ [ MEMORY ] Limit: 512MB 		[ OK ]
+ [ CPU    ] Limit: 100%  		[ WARNING: Recommend Under 50% ]
+ [ THREAD ] Concurrency: False 		[ OK ]
+--------------------------------------------------
+ >>> SYSTEM STATUS: STABLE. STARTING WORKLOAD MONITORING...
+==================================================
+
+2026-09-16 21:00:16,572 [INFO] [CpuWorker] Started. Maximum CPU Limit: 100%
+2026-09-16 21:00:16,576 [INFO] [CpuWorker] Current Load: 5.00%
+2026-09-16 21:00:19,693 [INFO] [CpuWorker] Current Load: 9.84%
+2026-09-16 21:00:22,810 [INFO] [CpuWorker] Current Load: 15.05%
+2026-09-16 21:00:25,929 [INFO] [CpuWorker] Current Load: 20.48%
+2026-09-16 21:00:29,048 [INFO] [CpuWorker] Current Load: 24.86%
+2026-09-16 21:00:32,166 [INFO] [CpuWorker] Current Load: 27.60%
+2026-09-16 21:00:35,272 [INFO] [CpuWorker] Current Load: 34.39%
+2026-09-16 21:00:38,390 [INFO] [CpuWorker] Current Load: 41.80%
+2026-09-16 21:00:41,507 [INFO] [CpuWorker] Current Load: 50.69%
+2026-09-16 21:00:41,610 [CRITICAL] [CpuWorker] CPU Threshold Violated! (50.69%).

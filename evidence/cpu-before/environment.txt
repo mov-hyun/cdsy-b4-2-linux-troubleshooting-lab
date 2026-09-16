@@ -1,0 +1,11 @@
+2026-09-16T21:00:14+09:00
+Linux lab-host 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+uid=1000(labuser) gid=1000(labuser) groups=1000(labuser),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),100(users)
+MEMORY_LIMIT=512
+CPU_MAX_OCCUPY=100
+MULTI_THREAD_ENABLE=false
+OBSERVATION_LIMIT_SECONDS=90
+7e0a19cfa80ece6b547a5008273661f0d4d71e526e96b51e0d0f341dd1bb3e40  /workspace/linux-troubleshooting-lab/agent-app-leak/agent-leak-app-x86
+               total        used        free      shared  buff/cache   available
+Mem:            7566         632        6615           3         468        6933
+Swap:           2048           0        2048

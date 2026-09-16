@@ -1,0 +1,29 @@
+2026-09-16T20:53:27+09:00
+your 131072x1 screen size is bogus. expect trouble
+    PID    PPID STAT %CPU %MEM   RSS NLWP     ELAPSED COMMAND
+    398     287 D+    0.0  0.0  1792    1       00:00 /workspace/linux-troubleshooting-lab/agent-app-leak/agent-leak-app-x86
+your 131072x1 screen size is bogus. expect trouble
+    PID     TID STAT %CPU WCHAN                            COMMAND
+    398     398 D+   50.0 p9_client_rpc                    agent-leak-app-
+your 131072x1 screen size is bogus. expect trouble
+    PID    PPID STAT %CPU %MEM   RSS NLWP     ELAPSED COMMAND
+2026-09-16T20:53:29+09:00
+your 131072x1 screen size is bogus. expect trouble
+    PID    PPID STAT %CPU %MEM   RSS NLWP     ELAPSED COMMAND
+    398     287 S+    4.4  0.0  1920    1       00:02 /workspace/linux-troubleshooting-lab/agent-app-leak/agent-leak-app-x86
+your 131072x1 screen size is bogus. expect trouble
+    PID     TID STAT %CPU WCHAN                            COMMAND
+    398     398 S+    4.3 do_wait                          agent-leak-app-
+your 131072x1 screen size is bogus. expect trouble
+    PID    PPID STAT %CPU %MEM   RSS NLWP     ELAPSED COMMAND
+    417     398 SN+   3.8  0.2 17536    1       00:01 /workspace/linux-troubleshooting-lab/agent-app-leak/agent-leak-app-x86
+2026-09-16T20:53:31+09:00
+your 131072x1 screen size is bogus. expect trouble
+    PID    PPID STAT %CPU %MEM   RSS NLWP     ELAPSED COMMAND
+    398     287 S+    2.2  0.0  1920    1       00:04 /workspace/linux-troubleshooting-lab/agent-app-leak/agent-leak-app-x86
+your 131072x1 screen size is bogus. expect trouble
+    PID     TID STAT %CPU WCHAN                            COMMAND
+    398     398 S+    2.2 do_wait                          agent-leak-app-
+your 131072x1 screen size is bogus. expect trouble
+    PID    PPID STAT %CPU %MEM   RSS NLWP     ELAPSED COMMAND
+    417     398 SN+   2.3  0.5 43264    1       00:03 /workspace/linux-troubleshooting-lab/agent-app-leak/agent-leak-app-x86

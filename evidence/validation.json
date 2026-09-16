@@ -1,0 +1,422 @@
+{
+  "passed": 104,
+  "total": 104,
+  "checks": [
+    {
+      "check": "oom-before: boot passed",
+      "passed": true
+    },
+    {
+      "check": "oom-before: sampled workload child",
+      "passed": true
+    },
+    {
+      "check": "oom-before: summary matches raw monitor values",
+      "passed": true
+    },
+    {
+      "check": "oom-before: summary matches exit records",
+      "passed": true
+    },
+    {
+      "check": "oom-before: summary matches raw top peak",
+      "passed": true
+    },
+    {
+      "check": "oom-after: boot passed",
+      "passed": true
+    },
+    {
+      "check": "oom-after: sampled workload child",
+      "passed": true
+    },
+    {
+      "check": "oom-after: summary matches raw monitor values",
+      "passed": true
+    },
+    {
+      "check": "oom-after: summary matches exit records",
+      "passed": true
+    },
+    {
+      "check": "oom-after: summary matches raw top peak",
+      "passed": true
+    },
+    {
+      "check": "cpu-before: boot passed",
+      "passed": true
+    },
+    {
+      "check": "cpu-before: sampled workload child",
+      "passed": true
+    },
+    {
+      "check": "cpu-before: summary matches raw monitor values",
+      "passed": true
+    },
+    {
+      "check": "cpu-before: summary matches exit records",
+      "passed": true
+    },
+    {
+      "check": "cpu-before: summary matches raw top peak",
+      "passed": true
+    },
+    {
+      "check": "cpu-after: boot passed",
+      "passed": true
+    },
+    {
+      "check": "cpu-after: sampled workload child",
+      "passed": true
+    },
+    {
+      "check": "cpu-after: summary matches raw monitor values",
+      "passed": true
+    },
+    {
+      "check": "cpu-after: summary matches exit records",
+      "passed": true
+    },
+    {
+      "check": "cpu-after: summary matches raw top peak",
+      "passed": true
+    },
+    {
+      "check": "deadlock-before: boot passed",
+      "passed": true
+    },
+    {
+      "check": "deadlock-before: sampled workload child",
+      "passed": true
+    },
+    {
+      "check": "deadlock-before: summary matches raw monitor values",
+      "passed": true
+    },
+    {
+      "check": "deadlock-before: summary matches exit records",
+      "passed": true
+    },
+    {
+      "check": "deadlock-before: summary matches raw top peak",
+      "passed": true
+    },
+    {
+      "check": "deadlock-after: boot passed",
+      "passed": true
+    },
+    {
+      "check": "deadlock-after: sampled workload child",
+      "passed": true
+    },
+    {
+      "check": "deadlock-after: summary matches raw monitor values",
+      "passed": true
+    },
+    {
+      "check": "deadlock-after: summary matches exit records",
+      "passed": true
+    },
+    {
+      "check": "deadlock-after: summary matches raw top peak",
+      "passed": true
+    },
+    {
+      "check": "cpu-burst: boot passed",
+      "passed": true
+    },
+    {
+      "check": "cpu-burst: sampled workload child",
+      "passed": true
+    },
+    {
+      "check": "cpu-burst: summary matches raw monitor values",
+      "passed": true
+    },
+    {
+      "check": "cpu-burst: summary matches exit records",
+      "passed": true
+    },
+    {
+      "check": "cpu-burst: summary matches raw top peak",
+      "passed": true
+    },
+    {
+      "check": "oom-before: one assignment variable changed",
+      "passed": true
+    },
+    {
+      "check": "oom-before: identical binary hash",
+      "passed": true
+    },
+    {
+      "check": "cpu-before: one assignment variable changed",
+      "passed": true
+    },
+    {
+      "check": "cpu-before: identical binary hash",
+      "passed": true
+    },
+    {
+      "check": "deadlock-before: one assignment variable changed",
+      "passed": true
+    },
+    {
+      "check": "deadlock-before: identical binary hash",
+      "passed": true
+    },
+    {
+      "check": "oom-before: RSS growth",
+      "passed": true
+    },
+    {
+      "check": "oom-before: MemoryGuard exit",
+      "passed": true
+    },
+    {
+      "check": "oom-after: RSS growth",
+      "passed": true
+    },
+    {
+      "check": "oom-after: MemoryGuard exit",
+      "passed": true
+    },
+    {
+      "check": "memory limit increase extends lifetime",
+      "passed": true
+    },
+    {
+      "check": "CPU before: protection exit",
+      "passed": true
+    },
+    {
+      "check": "CPU after: cooldown and continued operation",
+      "passed": true
+    },
+    {
+      "check": "CPU burst: finer sampling observed increased peak",
+      "passed": true
+    },
+    {
+      "check": "deadlock: reciprocal wait logs",
+      "passed": true
+    },
+    {
+      "check": "deadlock: OS wait evidence",
+      "passed": true
+    },
+    {
+      "check": "deadlock: stable memory and idle CPU",
+      "passed": true
+    },
+    {
+      "check": "deadlock after: work progresses",
+      "passed": true
+    },
+    {
+      "check": "oom-50: console termination marker",
+      "passed": true
+    },
+    {
+      "check": "oom-100: console termination marker",
+      "passed": true
+    },
+    {
+      "check": "cpu-100: console termination marker",
+      "passed": true
+    },
+    {
+      "check": "README.md: link docs/requirements.md",
+      "passed": true
+    },
+    {
+      "check": "README.md: link docs/experiment-guide.md",
+      "passed": true
+    },
+    {
+      "check": "README.md: link reports/01-memory-oom.md",
+      "passed": true
+    },
+    {
+      "check": "README.md: link reports/02-cpu-watchdog.md",
+      "passed": true
+    },
+    {
+      "check": "README.md: link reports/03-deadlock.md",
+      "passed": true
+    },
+    {
+      "check": "README.md: link evidence/summary.json",
+      "passed": true
+    },
+    {
+      "check": "README.md: link docs/assignment-review.md",
+      "passed": true
+    },
+    {
+      "check": "README.md: link docs/evidence-privacy.md",
+      "passed": true
+    },
+    {
+      "check": "01-memory-oom.md: four required report sections",
+      "passed": true
+    },
+    {
+      "check": "01-memory-oom.md: reproducible commands included",
+      "passed": true
+    },
+    {
+      "check": "reports\\01-memory-oom.md: link ../evidence/oom-before/application.log",
+      "passed": true
+    },
+    {
+      "check": "reports\\01-memory-oom.md: link ../evidence/oom-after/application.log",
+      "passed": true
+    },
+    {
+      "check": "reports\\01-memory-oom.md: link ../evidence/oom-before/monitor.tsv",
+      "passed": true
+    },
+    {
+      "check": "reports\\01-memory-oom.md: link ../evidence/oom-after/monitor.tsv",
+      "passed": true
+    },
+    {
+      "check": "reports\\01-memory-oom.md: link ../evidence/oom-before/process-snapshots.txt",
+      "passed": true
+    },
+    {
+      "check": "reports\\01-memory-oom.md: link ../evidence/oom-after/process-snapshots.txt",
+      "passed": true
+    },
+    {
+      "check": "reports\\01-memory-oom.md: link ../evidence/oom-before/environment.txt",
+      "passed": true
+    },
+    {
+      "check": "reports\\01-memory-oom.md: link ../evidence/oom-after/environment.txt",
+      "passed": true
+    },
+    {
+      "check": "reports\\01-memory-oom.md: link ../evidence/oom-before/result.txt",
+      "passed": true
+    },
+    {
+      "check": "reports\\01-memory-oom.md: link ../evidence/oom-after/result.txt",
+      "passed": true
+    },
+    {
+      "check": "reports\\01-memory-oom.md: link ../evidence/console-confirmation/oom-50.log",
+      "passed": true
+    },
+    {
+      "check": "reports\\01-memory-oom.md: link ../evidence/console-confirmation/oom-100.log",
+      "passed": true
+    },
+    {
+      "check": "02-cpu-watchdog.md: four required report sections",
+      "passed": true
+    },
+    {
+      "check": "02-cpu-watchdog.md: reproducible commands included",
+      "passed": true
+    },
+    {
+      "check": "reports\\02-cpu-watchdog.md: link ../evidence/cpu-before/application.log",
+      "passed": true
+    },
+    {
+      "check": "reports\\02-cpu-watchdog.md: link ../evidence/cpu-after/application.log",
+      "passed": true
+    },
+    {
+      "check": "reports\\02-cpu-watchdog.md: link ../evidence/cpu-before/monitor.tsv",
+      "passed": true
+    },
+    {
+      "check": "reports\\02-cpu-watchdog.md: link ../evidence/cpu-after/monitor.tsv",
+      "passed": true
+    },
+    {
+      "check": "reports\\02-cpu-watchdog.md: link ../evidence/cpu-before/top-threads.txt",
+      "passed": true
+    },
+    {
+      "check": "reports\\02-cpu-watchdog.md: link ../evidence/cpu-after/top-threads.txt",
+      "passed": true
+    },
+    {
+      "check": "reports\\02-cpu-watchdog.md: link ../evidence/cpu-before/process-snapshots.txt",
+      "passed": true
+    },
+    {
+      "check": "reports\\02-cpu-watchdog.md: link ../evidence/cpu-after/process-snapshots.txt",
+      "passed": true
+    },
+    {
+      "check": "reports\\02-cpu-watchdog.md: link ../evidence/cpu-before/result.txt",
+      "passed": true
+    },
+    {
+      "check": "reports\\02-cpu-watchdog.md: link ../evidence/cpu-after/result.txt",
+      "passed": true
+    },
+    {
+      "check": "reports\\02-cpu-watchdog.md: link ../evidence/console-confirmation/cpu-100.log",
+      "passed": true
+    },
+    {
+      "check": "reports\\02-cpu-watchdog.md: link ../evidence/console-confirmation/cpu-100-result.txt",
+      "passed": true
+    },
+    {
+      "check": "reports\\02-cpu-watchdog.md: link ../evidence/cpu-burst/top-threads.txt",
+      "passed": true
+    },
+    {
+      "check": "reports\\02-cpu-watchdog.md: link ../evidence/cpu-burst/application.log",
+      "passed": true
+    },
+    {
+      "check": "03-deadlock.md: four required report sections",
+      "passed": true
+    },
+    {
+      "check": "03-deadlock.md: reproducible commands included",
+      "passed": true
+    },
+    {
+      "check": "reports\\03-deadlock.md: link ../evidence/deadlock-before/application.log",
+      "passed": true
+    },
+    {
+      "check": "reports\\03-deadlock.md: link ../evidence/deadlock-before/process-snapshots.txt",
+      "passed": true
+    },
+    {
+      "check": "reports\\03-deadlock.md: link ../evidence/deadlock-before/monitor.tsv",
+      "passed": true
+    },
+    {
+      "check": "reports\\03-deadlock.md: link ../evidence/deadlock-before/top-threads.txt",
+      "passed": true
+    },
+    {
+      "check": "reports\\03-deadlock.md: link ../evidence/deadlock-before/result.txt",
+      "passed": true
+    },
+    {
+      "check": "reports\\03-deadlock.md: link ../evidence/deadlock-after/application.log",
+      "passed": true
+    },
+    {
+      "check": "reports\\03-deadlock.md: link ../evidence/deadlock-after/process-snapshots.txt",
+      "passed": true
+    },
+    {
+      "check": "reports\\03-deadlock.md: link ../evidence/deadlock-after/result.txt",
+      "passed": true
+    }
+  ]
+}

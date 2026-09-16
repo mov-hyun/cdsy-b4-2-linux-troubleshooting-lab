@@ -1,0 +1,300 @@
+{
+  "cpu-after": {
+    "EXIT_CODE": "143",
+    "ELAPSED_SECONDS": "68",
+    "STOPPED_BY_HARNESS": "true",
+    "workload_pid": 1158,
+    "samples": 63,
+    "top_interval_seconds": 1.0,
+    "rss_first_kib": 17792,
+    "rss_max_kib": 529920,
+    "rss_last_kib": 17944,
+    "top_interval_peak_cpu_pct": 9.9,
+    "top_interval_last_cpu_pct": 9.9,
+    "thread_counts": [
+      1,
+      3
+    ],
+    "heap_log_mb": [
+      "25",
+      "50",
+      "75",
+      "100",
+      "125",
+      "150",
+      "175",
+      "200",
+      "225",
+      "250",
+      "275",
+      "300",
+      "325",
+      "350",
+      "375",
+      "400",
+      "425",
+      "450",
+      "475",
+      "500",
+      "525"
+    ],
+    "cpu_load_log_pct": [
+      "5.00",
+      "14.02",
+      "19.47",
+      "24.18",
+      "33.68",
+      "39.56",
+      "40.00",
+      "39.44",
+      "31.15",
+      "29.81",
+      "28.77",
+      "22.24",
+      "18.71",
+      "8.84",
+      "5.00",
+      "11.24",
+      "14.19",
+      "18.71",
+      "21.01",
+      "27.39"
+    ],
+    "critical_logs": []
+  },
+  "cpu-before": {
+    "EXIT_CODE": "143",
+    "ELAPSED_SECONDS": "28",
+    "STOPPED_BY_HARNESS": "false",
+    "workload_pid": 421,
+    "samples": 26,
+    "top_interval_seconds": 1.0,
+    "rss_first_kib": 17792,
+    "rss_max_kib": 17792,
+    "rss_last_kib": 17792,
+    "top_interval_peak_cpu_pct": 5.0,
+    "top_interval_last_cpu_pct": 5.0,
+    "thread_counts": [
+      1
+    ],
+    "heap_log_mb": [],
+    "cpu_load_log_pct": [
+      "5.00",
+      "9.84",
+      "15.05",
+      "20.48",
+      "24.86",
+      "27.60",
+      "34.39",
+      "41.80",
+      "50.69"
+    ],
+    "critical_logs": [
+      "2026-09-16 21:00:41,610 [CRITICAL] [CpuWorker] CPU Threshold Violated! (50.69%)."
+    ]
+  },
+  "cpu-burst": {
+    "EXIT_CODE": "143",
+    "ELAPSED_SECONDS": "30",
+    "STOPPED_BY_HARNESS": "false",
+    "workload_pid": 412,
+    "samples": 29,
+    "top_interval_seconds": 0.1,
+    "rss_first_kib": 17536,
+    "rss_max_kib": 17536,
+    "rss_last_kib": 17536,
+    "top_interval_peak_cpu_pct": 40.0,
+    "top_interval_last_cpu_pct": 20.0,
+    "thread_counts": [
+      1
+    ],
+    "heap_log_mb": [],
+    "cpu_load_log_pct": [
+      "5.00",
+      "7.08",
+      "16.02",
+      "21.26",
+      "21.59",
+      "29.64",
+      "36.23",
+      "41.49",
+      "47.11",
+      "54.35"
+    ],
+    "critical_logs": [
+      "2026-09-16 21:08:26,760 [CRITICAL] [CpuWorker] CPU Threshold Violated! (54.349999999999994%)."
+    ]
+  },
+  "deadlock-after": {
+    "EXIT_CODE": "143",
+    "ELAPSED_SECONDS": "67",
+    "STOPPED_BY_HARNESS": "true",
+    "workload_pid": 3490,
+    "samples": 63,
+    "top_interval_seconds": 1.0,
+    "rss_first_kib": 17792,
+    "rss_max_kib": 529920,
+    "rss_last_kib": 17944,
+    "top_interval_peak_cpu_pct": 9.0,
+    "top_interval_last_cpu_pct": 0.0,
+    "thread_counts": [
+      1,
+      3
+    ],
+    "heap_log_mb": [
+      "25",
+      "50",
+      "75",
+      "100",
+      "125",
+      "150",
+      "175",
+      "200",
+      "225",
+      "250",
+      "275",
+      "300",
+      "325",
+      "350",
+      "375",
+      "400",
+      "425",
+      "450",
+      "475",
+      "500",
+      "525"
+    ],
+    "cpu_load_log_pct": [
+      "5.00",
+      "5.68",
+      "12.72",
+      "17.36",
+      "19.25",
+      "21.30",
+      "30.04",
+      "35.97",
+      "39.26",
+      "40.00",
+      "31.37",
+      "21.83",
+      "14.54",
+      "9.02",
+      "5.00",
+      "14.18",
+      "15.57",
+      "16.79",
+      "21.89",
+      "28.98"
+    ],
+    "critical_logs": []
+  },
+  "deadlock-before": {
+    "EXIT_CODE": "143",
+    "ELAPSED_SECONDS": "67",
+    "STOPPED_BY_HARNESS": "true",
+    "workload_pid": 2323,
+    "samples": 63,
+    "top_interval_seconds": 1.0,
+    "rss_first_kib": 17792,
+    "rss_max_kib": 17792,
+    "rss_last_kib": 17792,
+    "top_interval_peak_cpu_pct": 0.0,
+    "top_interval_last_cpu_pct": 0.0,
+    "thread_counts": [
+      1,
+      3
+    ],
+    "heap_log_mb": [],
+    "cpu_load_log_pct": [],
+    "critical_logs": [
+      "2026-09-16 21:01:59,868 [INFO] [AgentWorker][Worker-Thread-1] WAITING for [Socket_Pool_B]... (Status: BLOCKED)",
+      "2026-09-16 21:01:59,869 [INFO] [AgentWorker][Worker-Thread-2] WAITING for [Shared_Memory_A]... (Status: BLOCKED)"
+    ]
+  },
+  "high-memory-discovery": {
+    "EXIT_CODE": "143",
+    "ELAPSED_SECONDS": "36",
+    "STOPPED_BY_HARNESS": "false",
+    "workload_pid": 1012,
+    "samples": 35,
+    "top_interval_seconds": 1.0,
+    "rss_first_kib": 17664,
+    "rss_max_kib": 17664,
+    "rss_last_kib": 17664,
+    "top_interval_peak_cpu_pct": 5.0,
+    "top_interval_last_cpu_pct": 0.0,
+    "thread_counts": [
+      1
+    ],
+    "heap_log_mb": [],
+    "cpu_load_log_pct": [
+      "5.00",
+      "8.01",
+      "12.09",
+      "13.32",
+      "18.73",
+      "22.78",
+      "30.12",
+      "32.45",
+      "38.91",
+      "43.95",
+      "44.55",
+      "51.27"
+    ],
+    "critical_logs": [
+      "2026-09-16 20:58:21,919 [CRITICAL] [CpuWorker] CPU Threshold Violated! (51.27%)."
+    ]
+  },
+  "oom-after": {
+    "EXIT_CODE": "137",
+    "ELAPSED_SECONDS": "13",
+    "STOPPED_BY_HARNESS": "false",
+    "workload_pid": 778,
+    "samples": 11,
+    "top_interval_seconds": 1.0,
+    "rss_first_kib": 17792,
+    "rss_max_kib": 94592,
+    "rss_last_kib": 94592,
+    "top_interval_peak_cpu_pct": 3.0,
+    "top_interval_last_cpu_pct": 0.0,
+    "thread_counts": [
+      1
+    ],
+    "heap_log_mb": [
+      "25",
+      "50",
+      "75",
+      "100"
+    ],
+    "cpu_load_log_pct": [],
+    "critical_logs": [
+      "2026-09-16 20:57:44,295 [CRITICAL] [MemoryGuard] Memory limit exceeded (100MB >= 100MB) / (Recommend Over 256MB)",
+      "2026-09-16 20:57:44,296 [CRITICAL] [MemoryGuard] Self-terminating process 778 to prevent system instability."
+    ]
+  },
+  "oom-before": {
+    "EXIT_CODE": "137",
+    "ELAPSED_SECONDS": "6",
+    "STOPPED_BY_HARNESS": "false",
+    "workload_pid": 420,
+    "samples": 5,
+    "top_interval_seconds": 1.0,
+    "rss_first_kib": 17664,
+    "rss_max_kib": 43264,
+    "rss_last_kib": 43264,
+    "top_interval_peak_cpu_pct": 2.0,
+    "top_interval_last_cpu_pct": 0.0,
+    "thread_counts": [
+      1
+    ],
+    "heap_log_mb": [
+      "25",
+      "50"
+    ],
+    "cpu_load_log_pct": [],
+    "critical_logs": [
+      "2026-09-16 20:57:31,971 [CRITICAL] [MemoryGuard] Memory limit exceeded (50MB >= 50MB) / (Recommend Over 256MB)",
+      "2026-09-16 20:57:31,972 [CRITICAL] [MemoryGuard] Self-terminating process 420 to prevent system instability."
+    ]
+  }
+}

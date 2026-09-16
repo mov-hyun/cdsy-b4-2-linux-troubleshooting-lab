@@ -1,0 +1,24 @@
+2026-09-16T20:57:26+09:00
+    PID    PPID STAT %CPU %MEM   RSS NLWP     ELAPSED COMMAND
+    399     383 R+    0.0  0.0  1792    1       00:00 /workspace/linux-troubleshooting-lab/agent-app-leak/agent-leak-app-x86
+    PID     TID STAT %CPU WCHAN                            COMMAND
+    399     399 R+    0.0 p9_client_rpc                    agent-leak-app-
+    PID    PPID STAT %CPU %MEM   RSS NLWP     ELAPSED COMMAND
+2026-09-16T20:57:28+09:00
+    PID    PPID STAT %CPU %MEM   RSS NLWP     ELAPSED COMMAND
+    399     383 S+    4.8  0.0  1920    1       00:02 /workspace/linux-troubleshooting-lab/agent-app-leak/agent-leak-app-x86
+    PID     TID STAT %CPU WCHAN                            COMMAND
+    399     399 S+    4.8 do_wait                          agent-leak-app-
+    PID    PPID STAT %CPU %MEM   RSS NLWP     ELAPSED COMMAND
+    420     399 SN+   3.7  0.2 17664    1       00:01 /workspace/linux-troubleshooting-lab/agent-app-leak/agent-leak-app-x86
+    PID     TID STAT %CPU WCHAN                            COMMAND
+    420     420 SN+   3.7 do_select                        agent-leak-app-
+2026-09-16T20:57:30+09:00
+    PID    PPID STAT %CPU %MEM   RSS NLWP     ELAPSED COMMAND
+    399     383 S+    2.4  0.0  1920    1       00:04 /workspace/linux-troubleshooting-lab/agent-app-leak/agent-leak-app-x86
+    PID     TID STAT %CPU WCHAN                            COMMAND
+    399     399 S+    2.4 do_wait                          agent-leak-app-
+    PID    PPID STAT %CPU %MEM   RSS NLWP     ELAPSED COMMAND
+    420     399 SN+   2.2  0.5 43264    1       00:03 /workspace/linux-troubleshooting-lab/agent-app-leak/agent-leak-app-x86
+    PID     TID STAT %CPU WCHAN                            COMMAND
+    420     420 SN+   2.2 do_select                        agent-leak-app-
