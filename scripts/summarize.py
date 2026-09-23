@@ -31,6 +31,8 @@ for folder in sorted((ROOT / 'evidence').iterdir()):
         if thread_cpu:
             top_samples.append(sum(thread_cpu))
     rss = [int(row['rss_kib']) for row in rows]
+    cpu_interval = [int(row['cpu_interval_pct']) for row in rows if row.get('cpu_interval_pct')]
+    alerts = folder / 'alerts.log'
     summary[folder.name] = {
         **result,
         'workload_pid': int(pid),
@@ -42,6 +44,8 @@ for folder in sorted((ROOT / 'evidence').iterdir()):
         'top_interval_peak_cpu_pct': max(top_samples) if top_samples else None,
         'top_interval_last_cpu_pct': top_samples[-1] if top_samples else None,
         'thread_counts': sorted({int(row['threads']) for row in rows}),
+        'monitor_cpu_interval_peak_pct': max(cpu_interval) if cpu_interval else None,
+        'alerts': alerts.read_text().splitlines() if alerts.exists() else None,
         'heap_log_mb': re.findall(r'Current Heap: (\d+)MB', log),
         'cpu_load_log_pct': re.findall(r'Current Load: ([\d.]+)%', log),
         'critical_logs': [line for line in log.splitlines() if any(s in line for s in ('CRITICAL', 'WAITING', 'BLOCKED'))],

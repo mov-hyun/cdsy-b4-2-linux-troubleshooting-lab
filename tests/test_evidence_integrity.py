@@ -13,7 +13,7 @@ class EvidenceIntegrityTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
-        for name in ('scripts', 'evidence', 'reports', 'docs'):
+        for name in ('scripts', 'evidence', 'reports', 'docs', 'tests', '.github'):
             shutil.copytree(ROOT / name, self.root / name)
         shutil.copy2(ROOT / 'README.md', self.root / 'README.md')
 

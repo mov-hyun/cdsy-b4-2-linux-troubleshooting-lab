@@ -1,0 +1,141 @@
+2026-09-24T00:40:34+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+2026-09-24T00:40:36+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	do_select	357	1	270	0x0
+2026-09-24T00:40:38+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	do_select	366	1	270	0x0
+2026-09-24T00:40:41+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	do_select	366	1	270	0x0
+2026-09-24T00:40:43+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	do_select	18	0	270	0x0
+418	857	S	do_select	20	0	270	0x0
+2026-09-24T00:40:45+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:40:47+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:40:49+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:40:51+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:40:53+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:40:55+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:40:57+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:40:59+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:41:01+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:41:03+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:41:05+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:41:07+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:41:09+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:41:11+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:41:13+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:41:15+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:41:17+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:41:19+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:41:21+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:41:23+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:41:25+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:41:27+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:41:30+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:41:32+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0
+2026-09-24T00:41:34+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+418	418	S	futex_wait_queue	378	1	202	0x716d98000b70
+418	856	S	futex_wait_queue	27	0	202	0x23accbd0
+418	857	S	futex_wait_queue	29	0	202	0x23ad59a0

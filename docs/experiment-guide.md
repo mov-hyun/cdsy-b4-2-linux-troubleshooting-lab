@@ -32,7 +32,8 @@ bash scripts/run-case.sh my-deadlock-after 512 40 false 65
 
 제공 실행 파일은 실행용 부모 프로세스와 작업용 자식 프로세스를 만든다. 부모 PID만 관측하면 메모리가 거의 늘지 않아 잘못된 결론을 내릴 수 있다. `pid.txt`와 `workload-pid.txt`를 구분한다.
 
-- `monitor.sh`: 부모와 자식의 RSS, 상태, 실행 이후 평균 CPU, 스레드 수를 1초 간격으로 기록한다.
+- `monitor.sh`: 부모와 자식의 RSS, 상태, 실행 이후 평균 CPU, 스레드 수, 구간 CPU를 1초 간격으로 기록한다. 경보 조건은 [관제 정책](monitoring-policy.md)을 따른다.
+- `/proc/<pid>/task/<tid>/syscall`: 스레드가 어떤 시스템 콜에서, 어떤 futex 주소를 기다리는지 기록한다. `ptrace_scope=1`이라 앱을 띄운 `run-case.sh`가 직접 읽는다.
 - `ps -L`: 작업 프로세스의 스레드별 상태와 커널 대기 위치(wchan)를 확인한다.
 - `top -b -H -d 1`: 스레드별 CPU 표본을 파일로 저장한다. 첫 화면은 이후 1초 구간 표본과 의미가 달라 요약에서 제외한다.
 - 짧은 CPU 급상승은 `TOP_INTERVAL_SECONDS=0.1 bash scripts/run-case.sh my-cpu-burst 512 100 false 90`으로 추가 관측할 수 있다. 다른 간격의 최댓값을 동일한 지표처럼 직접 비교하지 않는다.

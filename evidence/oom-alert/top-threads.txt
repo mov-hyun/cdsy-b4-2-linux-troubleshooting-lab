@@ -1,0 +1,35 @@
+top - 00:42:58 up 3 min,  1 user,  load average: 0.05, 0.04, 0.00
+Threads:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  3.6 sy,  0.0 ni, 95.8 id,  0.0 wa,  0.0 hi,  0.6 si,  0.0 st 
+MiB Mem :   7566.2 total,   6575.6 free,    621.7 used,    521.2 buff/cache     
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   6944.5 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+    676 labuser     30  10   23076  17792   9600 S   0.0   0.2   0:00.06 agent-leak-app-
+
+top - 00:42:59 up 3 min,  1 user,  load average: 0.04, 0.03, 0.00
+Threads:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.1 us,  0.3 sy,  0.1 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :   7566.2 total,   6575.6 free,    621.7 used,    521.2 buff/cache     
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   6944.5 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+    676 labuser     30  10   48680  43392   9600 S   2.0   0.6   0:00.08 agent-leak-app-
+
+top - 00:43:00 up 3 min,  1 user,  load average: 0.04, 0.03, 0.00
+Threads:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.2 us,  0.3 sy,  0.0 ni, 99.4 id,  0.0 wa,  0.0 hi,  0.1 si,  0.0 st 
+MiB Mem :   7566.2 total,   6554.4 free,    642.9 used,    521.3 buff/cache     
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   6923.3 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+    676 labuser     30  10   48680  43392   9600 S   0.0   0.6   0:00.08 agent-leak-app-
+
+top - 00:43:01 up 3 min,  1 user,  load average: 0.04, 0.03, 0.00
+Threads:   1 total,   0 running,   1 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.1 us,  0.4 sy,  0.0 ni, 99.4 id,  0.0 wa,  0.0 hi,  0.1 si,  0.0 st 
+MiB Mem :   7566.2 total,   6554.4 free,    642.9 used,    521.3 buff/cache     
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   6923.3 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+    676 labuser     30  10   48680  43392   9600 S   0.0   0.6   0:00.08 agent-leak-app-

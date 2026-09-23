@@ -79,6 +79,27 @@ check('deadlock: reciprocal wait logs', 'WAITING for [Socket_Pool_B]' in log('de
 check('deadlock: OS wait evidence', 'futex_wait_queue' in (root / 'evidence/deadlock-before/process-snapshots.txt').read_text())
 check('deadlock: stable memory and idle CPU', data['deadlock-before']['rss_first_kib'] == data['deadlock-before']['rss_max_kib'] and data['deadlock-before']['top_interval_peak_cpu_pct'] == 0)
 check('deadlock after: work progresses', 'Current Heap:' in log('deadlock-after') and 'Memory Cache Flushed' in log('deadlock-after') and 'Status: BLOCKED' not in log('deadlock-after'))
+
+def alerts(case):
+    return (root / 'evidence' / case / 'alerts.log').read_text()
+
+# Per-thread wait objects from /proc/TID/syscall (syscall 202 = futex).
+waits = (root / 'evidence/deadlock-stack/thread-waits.txt').read_text()
+snapshots = [[line.split('\t') for line in block.splitlines() if re.match(r'\d+\t\d+\t', line)] for block in re.split(r'^\d{4}-\d\d-\d\dT.*$', waits, flags=re.M)]
+stuck = [s for s in snapshots if len(s) >= 3 and all(row[6] == '202' for row in s)]
+def environment(case):
+    text = (root / 'evidence' / case / 'environment.txt').read_text()
+    return dict(re.findall(r'^(MEMORY_LIMIT|CPU_MAX_OCCUPY|MULTI_THREAD_ENABLE)=(.+)$', text, re.M)), re.search(r'^([0-9a-f]{64})  ', text, re.M).group(1)
+
+check('deadlock stack: same binary and settings as deadlock-before', environment('deadlock-stack') == environment('deadlock-before'))
+check('deadlock stack: reciprocal wait logs', 'WAITING for [Socket_Pool_B]' in log('deadlock-stack') and 'WAITING for [Shared_Memory_A]' in log('deadlock-stack'))
+check('deadlock stack: every thread blocks in futex on a distinct address', bool(stuck) and len({row[7] for row in stuck[-1]}) == len(stuck[-1]))
+check('deadlock stack: no thread woke while blocked', len(stuck) >= 10 and len({tuple((row[1], row[4], row[5]) for row in s) for s in stuck}) == 1)
+check('deadlock stack: stall alert raised', 'ALERT' in alerts('deadlock-stack') and 'STALL' in alerts('deadlock-stack'))
+guard = re.search(r'^\S+ (\d\d:\d\d:\d\d),\d+ \[CRITICAL\] \[MemoryGuard\]', log('oom-alert'), re.M)
+mem_alert = re.search(r'^ALERT\t\S+T(\d\d:\d\d:\d\d)\S*\tMEM ', alerts('oom-alert'), re.M)
+check('oom alert: MEM alert precedes MemoryGuard exit', bool(guard and mem_alert) and mem_alert.group(1) < guard.group(1))
+check('cpu alert: Watchdog fired without an OS interval CPU alert', 'CPU Threshold Violated!' in log('cpu-alert') and 'CPU pid=' not in alerts('cpu-alert'))
 for name, marker in (('oom-50', 'SELF-TERMINATED'), ('oom-100', 'SELF-TERMINATED'), ('cpu-100', 'WATCHDOG: INITIATING EMERGENCY ABORT (SIGTERM)')):
     check(name + ': console termination marker', marker in (root / f'evidence/console-confirmation/{name}.log').read_text())
 

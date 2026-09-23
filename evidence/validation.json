@@ -1,6 +1,6 @@
 {
-  "passed": 104,
-  "total": 104,
+  "passed": 143,
+  "total": 143,
   "checks": [
     {
       "check": "oom-before: boot passed",
@@ -215,6 +215,34 @@
       "passed": true
     },
     {
+      "check": "deadlock stack: same binary and settings as deadlock-before",
+      "passed": true
+    },
+    {
+      "check": "deadlock stack: reciprocal wait logs",
+      "passed": true
+    },
+    {
+      "check": "deadlock stack: every thread blocks in futex on a distinct address",
+      "passed": true
+    },
+    {
+      "check": "deadlock stack: no thread woke while blocked",
+      "passed": true
+    },
+    {
+      "check": "deadlock stack: stall alert raised",
+      "passed": true
+    },
+    {
+      "check": "oom alert: MEM alert precedes MemoryGuard exit",
+      "passed": true
+    },
+    {
+      "check": "cpu alert: Watchdog fired without an OS interval CPU alert",
+      "passed": true
+    },
+    {
       "check": "oom-50: console termination marker",
       "passed": true
     },
@@ -247,6 +275,10 @@
       "passed": true
     },
     {
+      "check": "README.md: link reports/04-scheduling.md",
+      "passed": true
+    },
+    {
       "check": "README.md: link evidence/summary.json",
       "passed": true
     },
@@ -259,11 +291,79 @@
       "passed": true
     },
     {
+      "check": "README.md: link docs/monitoring-policy.md",
+      "passed": true
+    },
+    {
+      "check": "README.md: link docs/incident-response.md",
+      "passed": true
+    },
+    {
+      "check": "README.md: link docs/retrospective.md",
+      "passed": true
+    },
+    {
+      "check": "docs\\experiment-guide.md: link monitoring-policy.md",
+      "passed": true
+    },
+    {
+      "check": "docs\\incident-response.md: link ../reports/03-deadlock.md",
+      "passed": true
+    },
+    {
+      "check": "docs\\incident-response.md: link ../reports/01-memory-oom.md",
+      "passed": true
+    },
+    {
+      "check": "docs\\incident-response.md: link ../reports/02-cpu-watchdog.md",
+      "passed": true
+    },
+    {
+      "check": "docs\\monitoring-policy.md: link ../scripts/monitor.sh",
+      "passed": true
+    },
+    {
+      "check": "docs\\monitoring-policy.md: link ../tests/test_monitor.py",
+      "passed": true
+    },
+    {
+      "check": "docs\\monitoring-policy.md: link ../evidence/oom-alert/alerts.log",
+      "passed": true
+    },
+    {
+      "check": "docs\\monitoring-policy.md: link ../evidence/deadlock-stack/alerts.log",
+      "passed": true
+    },
+    {
+      "check": "docs\\monitoring-policy.md: link ../evidence/cpu-alert/alerts.log",
+      "passed": true
+    },
+    {
+      "check": "docs\\monitoring-policy.md: link incident-response.md",
+      "passed": true
+    },
+    {
+      "check": "docs\\retrospective.md: link evidence-privacy.md",
+      "passed": true
+    },
+    {
+      "check": "docs\\retrospective.md: link monitoring-policy.md",
+      "passed": true
+    },
+    {
+      "check": "docs\\retrospective.md: link ../.github/workflows/checks.yml",
+      "passed": true
+    },
+    {
       "check": "01-memory-oom.md: four required report sections",
       "passed": true
     },
     {
       "check": "01-memory-oom.md: reproducible commands included",
+      "passed": true
+    },
+    {
+      "check": "reports\\01-memory-oom.md: link ../docs/incident-response.md",
       "passed": true
     },
     {
@@ -315,11 +415,23 @@
       "passed": true
     },
     {
+      "check": "reports\\01-memory-oom.md: link ../evidence/oom-alert/alerts.log",
+      "passed": true
+    },
+    {
+      "check": "reports\\01-memory-oom.md: link ../docs/monitoring-policy.md",
+      "passed": true
+    },
+    {
       "check": "02-cpu-watchdog.md: four required report sections",
       "passed": true
     },
     {
       "check": "02-cpu-watchdog.md: reproducible commands included",
+      "passed": true
+    },
+    {
+      "check": "reports\\02-cpu-watchdog.md: link ../docs/incident-response.md",
       "passed": true
     },
     {
@@ -379,11 +491,23 @@
       "passed": true
     },
     {
+      "check": "reports\\02-cpu-watchdog.md: link ../evidence/cpu-alert/alerts.log",
+      "passed": true
+    },
+    {
+      "check": "reports\\02-cpu-watchdog.md: link ../docs/monitoring-policy.md",
+      "passed": true
+    },
+    {
       "check": "03-deadlock.md: four required report sections",
       "passed": true
     },
     {
       "check": "03-deadlock.md: reproducible commands included",
+      "passed": true
+    },
+    {
+      "check": "reports\\03-deadlock.md: link ../docs/incident-response.md",
       "passed": true
     },
     {
@@ -407,6 +531,30 @@
       "passed": true
     },
     {
+      "check": "reports\\03-deadlock.md: link ../scripts/run-case.sh",
+      "passed": true
+    },
+    {
+      "check": "reports\\03-deadlock.md: link ../evidence/deadlock-stack/",
+      "passed": true
+    },
+    {
+      "check": "reports\\03-deadlock.md: link ../evidence/deadlock-stack/thread-waits.txt",
+      "passed": true
+    },
+    {
+      "check": "reports\\03-deadlock.md: link ../evidence/deadlock-stack/application.log",
+      "passed": true
+    },
+    {
+      "check": "reports\\03-deadlock.md: link ../evidence/deadlock-stack/monitor.tsv",
+      "passed": true
+    },
+    {
+      "check": "reports\\03-deadlock.md: link ../evidence/deadlock-stack/alerts.log",
+      "passed": true
+    },
+    {
       "check": "reports\\03-deadlock.md: link ../evidence/deadlock-after/application.log",
       "passed": true
     },
@@ -416,6 +564,14 @@
     },
     {
       "check": "reports\\03-deadlock.md: link ../evidence/deadlock-after/result.txt",
+      "passed": true
+    },
+    {
+      "check": "reports\\04-scheduling.md: link ../evidence/cpu-after/application.log",
+      "passed": true
+    },
+    {
+      "check": "reports\\04-scheduling.md: link ../evidence/deadlock-after/application.log",
       "passed": true
     }
   ]

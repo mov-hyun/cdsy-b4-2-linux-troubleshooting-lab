@@ -10,6 +10,9 @@
 4. [수치 요약](evidence/summary.json)과 `evidence/`의 원본 로그
 5. [과제 요구사항 정밀 검토와 해석 한계](docs/assignment-review.md)
 6. [공개 증거의 개인정보 마스킹 범위](docs/evidence-privacy.md)
+7. [monitor.sh 탐지·알림·샘플링 정책](docs/monitoring-policy.md)
+8. [장애 치명도·우선순위 기준과 동시 장애 대응 절차](docs/incident-response.md)
+9. [회고와 개선 체크리스트](docs/retrospective.md)
 
 ## 실행 환경
 
@@ -35,7 +38,9 @@ python3 scripts/summarize.py
 ## 증거 해석
 
 - `application.log`: 애플리케이션이 출력한 메시지. 자체 부하 표시값과 실제 CPU 점유율을 구분한다.
-- `monitor.tsv`: 실행용 부모 및 작업용 자식 프로세스의 RSS(KiB), 평균 CPU, 상태, 스레드 수.
+- `monitor.tsv`: 실행용 부모 및 작업용 자식 프로세스의 RSS(KiB), 평균 CPU, 상태, 스레드 수. 새 실행부터 구간 CPU(`cpu_interval_pct`)를 함께 기록한다.
+- `alerts.log`: `monitor.sh`의 메모리·CPU·로그 정지 경보(새 실행부터).
+- `thread-waits.txt`: 스레드별 대기 시스템 콜, futex 주소, 문맥 교환 수(새 실행부터).
 - `top-threads.txt`: 작업용 자식의 스레드별 CPU 구간 표본.
 - `process-snapshots.txt`: PID/PPID, 스레드 상태, 커널 대기 위치.
 - `result.txt`: 종료 코드, 전체 실행 시간, 관측 스크립트에 의한 종료 여부.

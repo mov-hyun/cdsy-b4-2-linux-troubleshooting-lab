@@ -1,0 +1,8 @@
+2026-09-24T00:42:55+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+2026-09-24T00:42:57+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+676	676	S	do_select	357	0	270	0x0
+2026-09-24T00:42:59+09:00
+pid	tid	state	wchan	voluntary_ctxt	nonvoluntary_ctxt	syscall_nr	futex_uaddr
+676	676	S	do_select	362	1	270	0x0

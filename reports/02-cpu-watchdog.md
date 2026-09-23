@@ -1,5 +1,11 @@
 # [Bug] CPU 부하 시나리오에서 Watchdog가 SIGTERM으로 종료
 
+| 치명도 | 우선순위 | 영향 범위 | 탐지 | 확산 가능성 |
+| --- | --- | --- | --- | --- |
+| SEV2 Major | P3 | 약 28초 후 Watchdog 종료(143) | 종료는 쉬움. OS CPU 지표로 사전 탐지는 불가 | 낮음. 같은 시각 호스트 idle 96% 이상 |
+
+등급 기준: [장애 치명도·우선순위 기준](../docs/incident-response.md)
+
 ## 1. Description (현상 설명)
 
 2026-09-16 Ubuntu 24.04에서 MEMORY_LIMIT=512, CPU_MAX_OCCUPY=100, MULTI_THREAD_ENABLE=false로 실행했다. CpuWorker의 Current Load 로그가 5.00%에서 50.69%까지 증가한 뒤 CPU Threshold Violated를 기록하며 종료했다. 전체 실행 시간은 약 28초, 종료 코드는 143이었다.
@@ -45,6 +51,10 @@ TOP_INTERVAL_SECONDS=0.1 bash scripts/run-case.sh cpu-burst 512 100 false 90
 [0.1초 간격 top 원본](../evidence/cpu-burst/top-threads.txt)에서 작업 PID 412의 CPU가 0.0%인 표본 사이에 최대 40.0%인 표본이 관측되었다. 21:08:20과 21:08:23에 40.0% 표본이 있으며 시스템 전체 idle은 각각 97.6%, 96.9%였다. 특정 프로세스의 짧은 부하 상승을 시스템 전체 포화와 구분할 수 있다.
 
 [해당 실행 로그](../evidence/cpu-burst/application.log)는 Current Load 54.35%에서 보호 종료를 기록했다. 이는 OS의 CPU 표본과 같은 지표라는 뜻은 아니다. 추가 실행 시간은 약 30초였다. 0.1초 표본의 최댓값은 1초 간격 Before/After 표와 직접 비교하지 않는다.
+
+### OS 지표 경보 검증
+
+같은 100% 설정에 `ALERT_CPU_PCT=80`을 주고 다시 실행했다([cpu-alert](../evidence/cpu-alert/alerts.log)). `monitor.sh`의 구간 CPU는 최대 4%에 그쳐 경보가 나지 않았다. 앱은 `Current Load: 52.96%`에서 Watchdog 종료를 기록했다. 앱이 판단에 쓰는 부하 지표는 OS가 집계하는 프로세스 CPU와 다르므로, 이 Watchdog은 OS 지표만으로 예측할 수 없다. 대응 방향은 [관제 정책](../docs/monitoring-policy.md)에 정리했다.
 
 ## 3. Root Cause Analysis (원인 분석)
 

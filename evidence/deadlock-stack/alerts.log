@@ -1,0 +1,1 @@
+ALERT	2026-09-24T00:40:59+09:00	STALL pid=385 log_idle_seconds=15 threshold=15

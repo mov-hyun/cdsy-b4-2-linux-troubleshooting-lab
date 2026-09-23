@@ -20,6 +20,10 @@
 | 멀티스레드 설정 비교 | true→false, 다른 설정 유지 | 정체→작업 로그 지속 및 메모리 정리 확인 |
 | 리포트 3건과 필수 4개 장 | reports/의 Markdown 3개 | 현상, 증거, 원인, 조치·검증 및 재현 명령 포함 |
 | (선택) 스케줄링 알고리즘 추론 | reports/04-scheduling.md, cpu-after·deadlock-after 로그 | A→B→C 비선점 순차 실행, 대기 시간 누적 → FCFS 추론 |
+| (보강) 데드락 스레드별 대기 추적 | evidence/deadlock-stack/thread-waits.txt | 세 스레드가 서로 다른 futex 주소에서 49초간 문맥 교환 0회. gdb·jstack 대신 /proc 사용 |
+| (보강) 관제 탐지·알림 정책 | docs/monitoring-policy.md, oom-alert·cpu-alert·deadlock-stack의 alerts.log | MEM 경보 종료 2초 전, STALL 경보 15초. OS CPU 경보로는 Watchdog 예측 불가 확인 |
+| (보강) 치명도·우선순위, 동시 장애 절차 | docs/incident-response.md, 각 리포트 상단 표 | SEV1 교착 → P2 메모리 → P3 CPU |
+| (보강) 회고와 개선 계획 | docs/retrospective.md, .github/workflows/checks.yml | 완료·예정 항목과 완료 기준 |
 | 디컴파일·역분석 금지 | 외부 실행·ps·top·로그만 활용 | 소스 내부 함수·잠금 구현·정확한 임계치 계산식은 단정하지 않음 |
 
 ## 검토 후 보완한 사항

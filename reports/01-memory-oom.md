@@ -1,5 +1,11 @@
 # [Bug] 메모리 누적으로 MemoryGuard가 프로세스를 강제 종료
 
+| 치명도 | 우선순위 | 영향 범위 | 탐지 | 확산 가능성 |
+| --- | --- | --- | --- | --- |
+| SEV2 Major | P2 | 수 초마다 강제 종료(137), 재시작해도 재발 | 쉬움. 종료 로그, RSS 경보가 종료 2초 전 | 높음. 한도를 올릴수록 호스트 메모리 잠식 |
+
+등급 기준: [장애 치명도·우선순위 기준](../docs/incident-response.md)
+
 ## 1. Description (현상 설명)
 
 2026-09-16 Ubuntu 24.04에서 MEMORY_LIMIT=50, CPU_MAX_OCCUPY=100, MULTI_THREAD_ENABLE=false로 실행했다. MemoryWorker의 Current Heap이 25MB에서 50MB로 증가한 직후 MemoryGuard가 종료를 기록했다. 전체 실행 시간은 약 6초, 종료 코드는 137이었다.
@@ -33,6 +39,10 @@ Self-terminating process 420 to prevent system instability.
 프로그램이 50MB 또는 100MB 할당을 기록하고 곧바로 종료하므로 1초 주기의 RSS 관측에서는 마지막 할당 직전까지만 포착되었다. Current Heap과 RSS는 서로 다른 측정값이며 동일시하지 않았다.
 
 파일 리다이렉션에서 강제 종료 직전 표준 출력이 일부 빠져, 가상 터미널로 같은 설정을 추가 실행했다. [50MB 콘솔 확인](../evidence/console-confirmation/oom-50.log)과 [100MB 콘솔 확인](../evidence/console-confirmation/oom-100.log)에서 `SELF-TERMINATED (Memory Limit Exceeded)`를 확보했다. 추가 실행의 PID와 시각은 본 비교 실행과 다르며, 본 표의 시간·RSS에 합산하지 않았다.
+
+### 조기 경보 검증
+
+같은 50MB 설정에 `ALERT_RSS_KIB=40960`(한도의 80%)을 주고 다시 실행했다([oom-alert](../evidence/oom-alert/alerts.log)). 00:42:59에 `MEM rss_kib=43392` 경보가 났고, 00:43:01에 MemoryGuard가 종료를 기록했다. 종료 2초 전에 알 수 있었지만, 누수 속도가 빨라 선행 시간이 짧다. 개선 방향은 [관제 정책](../docs/monitoring-policy.md)에 정리했다.
 
 ## 3. Root Cause Analysis (원인 분석)
 

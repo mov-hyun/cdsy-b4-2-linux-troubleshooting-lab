@@ -19,12 +19,15 @@ export AGENT_HOME="$root/.runtime/agent"
 export AGENT_PORT=15034 AGENT_UPLOAD_DIR="$AGENT_HOME/upload_files" AGENT_KEY_PATH="$AGENT_HOME/api_keys" AGENT_LOG_DIR="$AGENT_HOME/logs"
 export MEMORY_LIMIT="$memory" CPU_MAX_OCCUPY="$cpu" MULTI_THREAD_ENABLE="$multithread"
 printf 'agent_api_key_test' > "$AGENT_KEY_PATH/secret.key"
+# monitor.sh alert thresholds (docs/monitoring-policy.md); stall detection is on by default.
+export ALERT_LOG_FILE="$out/application.log" ALERT_STALL_SECONDS=${ALERT_STALL_SECONDS:-15}
 {
     date --iso-8601=seconds
     uname -a
     id
     printf 'MEMORY_LIMIT=%s\nCPU_MAX_OCCUPY=%s\nMULTI_THREAD_ENABLE=%s\nOBSERVATION_LIMIT_SECONDS=%s\n' "$memory" "$cpu" "$multithread" "$duration"
     printf 'TOP_INTERVAL_SECONDS=%s\n' "${TOP_INTERVAL_SECONDS:-1}"
+    printf 'ALERT_RSS_KIB=%s\nALERT_CPU_PCT=%s\nALERT_STALL_SECONDS=%s\n' "${ALERT_RSS_KIB:-}" "${ALERT_CPU_PCT:-}" "$ALERT_STALL_SECONDS"
     sha256sum "$root/agent-app-leak/agent-leak-app-x86"
     free -m
 } > "$out/environment.txt"
@@ -33,7 +36,7 @@ start=$(date +%s)
 "$root/agent-app-leak/agent-leak-app-x86" > "$out/application.log" 2>&1 &
 app_pid=$!
 printf '%s\n' "$app_pid" > "$out/pid.txt"
-bash "$root/scripts/monitor.sh" "$app_pid" > "$out/monitor.tsv" &
+bash "$root/scripts/monitor.sh" "$app_pid" > "$out/monitor.tsv" 2> "$out/alerts.log" &
 monitor_pid=$!
 top_pid=''
 cleanup() {
@@ -61,6 +64,29 @@ while kill -0 "$app_pid" 2>/dev/null; do
             ps -L -p "$child_pid" -o pid,tid,stat,pcpu,wchan:32,comm
         done
     } >> "$out/process-snapshots.txt" 2>&1 || true
+    # Per-thread wait object. Yama ptrace_scope=1 lets only an ancestor read
+    # /proc/TID/syscall, so this shell reads it with the read builtin, not cat.
+    {
+        date --iso-8601=seconds
+        printf 'pid\ttid\tstate\twchan\tvoluntary_ctxt\tnonvoluntary_ctxt\tsyscall_nr\tfutex_uaddr\n'
+        for child_pid in $(pgrep -P "$app_pid" || true); do
+            for task in /proc/"$child_pid"/task/*; do
+                syscall=denied wchan='' vol='' nvol=''
+                { read -r syscall < "$task/syscall"; } 2>/dev/null || true
+                { read -r wchan < "$task/wchan"; } 2>/dev/null || true
+                { read -r task_stat < "$task/stat"; } 2>/dev/null || continue
+                task_stat=${task_stat##*) }
+                while read -r key value _; do
+                    case $key in
+                        voluntary_ctxt_switches:) vol=$value ;;
+                        nonvoluntary_ctxt_switches:) nvol=$value ;;
+                    esac
+                done < "$task/status"
+                read -r nr uaddr _ <<< "$syscall"
+                printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' "$child_pid" "${task##*/}" "${task_stat%% *}" "$wchan" "$vol" "$nvol" "$nr" "${uaddr:-}"
+            done
+        done
+    } >> "$out/thread-waits.txt" 2>&1 || true
     if [ -z "$top_pid" ]; then
         child_pid=$(pgrep -P "$app_pid" | head -n 1 || true)
         if [ -n "$child_pid" ]; then

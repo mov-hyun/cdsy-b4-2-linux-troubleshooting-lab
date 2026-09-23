@@ -6,3 +6,4 @@
 .gitattributes text eol=lf
 # Preserve the exact captured bytes, including terminal CRLF, on every platform.
 evidence/** -text -whitespace
+*.yml text eol=lf
