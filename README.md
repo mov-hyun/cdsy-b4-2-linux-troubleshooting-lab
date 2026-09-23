@@ -6,7 +6,7 @@
 
 1. [과제 요구사항](docs/requirements.md)
 2. [실험 진행과 명령어 해설](docs/experiment-guide.md)
-3. [메모리 누수/OOM](reports/01-memory-oom.md), [CPU와 Watchdog](reports/02-cpu-watchdog.md), [교착상태](reports/03-deadlock.md)
+3. [메모리 누수/OOM](reports/01-memory-oom.md), [CPU와 Watchdog](reports/02-cpu-watchdog.md), [교착상태](reports/03-deadlock.md), (선택) [스케줄링 추론](reports/04-scheduling.md)
 4. [수치 요약](evidence/summary.json)과 `evidence/`의 원본 로그
 5. [과제 요구사항 정밀 검토와 해석 한계](docs/assignment-review.md)
 6. [공개 증거의 개인정보 마스킹 범위](docs/evidence-privacy.md)
@@ -56,7 +56,7 @@ After 실행은 관찰 종료 후 스크립트로 중단했다. 종료 처리까
 
 `evidence/discovery`는 부모 PID만 관측한 초기 탐색 자료다. 정식 수치 비교에서 제외했다. `high-memory-discovery`는 CPU 경로를 확인한 탐색 실행이며, `cpu-burst`는 짧은 CPU 급상승을 확인한 0.1초 표본이다. `console-confirmation`은 강제 종료 직전 콘솔 문구를 가상 터미널로 추가 수집한 자료다.
 
-필수 보고서 3건은 GitHub Issue 구조의 Markdown으로 작성했다. 이 레포 링크를 제출 자료로 사용한다. 선택 과제인 스케줄링 알고리즘 추론과 실제 GitHub Issues 등록은 포함하지 않는다.
+필수 보고서 3건과 선택 과제인 스케줄링 추론 1건은 GitHub Issue 구조의 Markdown으로 작성했고, 같은 내용을 GitHub Issues에도 등록했다. 이 레포 링크를 제출 자료로 사용한다.
 
 ## 검증
 

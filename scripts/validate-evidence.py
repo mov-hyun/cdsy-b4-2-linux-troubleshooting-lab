@@ -83,8 +83,8 @@ for name, marker in (('oom-50', 'SELF-TERMINATED'), ('oom-100', 'SELF-TERMINATED
     check(name + ': console termination marker', marker in (root / f'evidence/console-confirmation/{name}.log').read_text())
 
 for markdown in [root / 'README.md', *sorted((root / 'docs').glob('*.md')), *sorted((root / 'reports').glob('*.md'))]:
-    if markdown.parent.name == 'reports':
-        body = markdown.read_text(encoding='utf-8')
+    body = markdown.read_text(encoding='utf-8')
+    if markdown.parent.name == 'reports' and body.startswith('# [Bug]'):
         check(markdown.name + ': four required report sections', all(s in body for s in ('## 1. Description', '## 2. Evidence & Logs', '## 3. Root Cause Analysis', '## 4. Workaround & Verification')))
         check(markdown.name + ': reproducible commands included', 'bash scripts/run-case.sh' in body)
     for target in re.findall(r'\]\(([^)]+)\)', markdown.read_text(encoding='utf-8')):
